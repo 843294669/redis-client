@@ -1,6 +1,8 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
+  // close ESlint rules
+  lintOnSave: false,
   devServer: {
     // must set true to open proxy.
     open: true,
@@ -10,7 +12,7 @@ module.exports = defineConfig({
             changeOrigin: true,
             ws: false,
             pathRewrite: {
-            '^/redis': ''
+              '^/redis': ''
             }
         }
     }
