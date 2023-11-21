@@ -1,10 +1,18 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  transpileDependencies: true
-  server: {
+  transpileDependencies: true,
+  devServer: {
+    // must set true to open proxy.
+    open: true,
     proxy: {
-        target: "https://try.redis.io",
-        changeOrigin: true
+        "/redis": {
+            target: "https://try.redis.io",
+            changeOrigin: true,
+            ws: false,
+            pathRewrite: {
+            '^/redis': ''
+            }
+        }
     }
   }
 })
