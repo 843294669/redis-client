@@ -1,11 +1,13 @@
 <template>
-  <div class="redis" v-html="data">
-  </div>
-  <div class="caption" v-html="caption">
-  </div>
-  <div class="input">
-    <input id="input" />
-  </div>
+    <div class="log" v-scrollBottom>
+        <div class="commands" v-html="data">
+        </div>
+        <div class="caption" v-html="caption">
+        </div>
+    </div>
+    <div class="input">
+        <input id="input" v-model="command" @keyup.enter="commandSend"/>
+    </div>
 </template>
 
 <script>
@@ -16,11 +18,12 @@ export default {
   data() {
     return {
         data: "",
-        caption: ""
+        caption: "",
+        command: ""
     }
   },
   async created() {
-    await axios.get(api.redis.home)
+    await axios.get(api.redis.help)
         .then(response => {
           // 请求成功处理
           this.data = response.data.notification;
@@ -40,10 +43,23 @@ export default {
   },
   methods: {
     commandHelp(command) {
-        axios.get(api.redis.commandHelp + command)
+        axios.get(api.redis.help + command)
             .then(response => {
               // 请求成功处理
-              this.caption = response.data.notification;
+              this.caption += response.data.notification;
+            })
+            .catch(error => {
+              // 请求失败处理
+              console.error(error);
+            });
+    },
+    commandSend() {
+        axios.get(api.redis.sendCommand + this.command.replace(/ /g, "+"))
+            .then(response => {
+              // 请求成功处理
+              this.caption += this.command + "：";
+              this.caption += response.data.response + "<br/>";
+              this.command = "";
             })
             .catch(error => {
               // 请求失败处理
@@ -55,36 +71,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-.redis {
-  overflow: auto;
-}
-.caption {
-}
-.input {
-    position: fixed;
-    bottom: 2.5em;
-}
-#input {
-    font-size: 1.5em;
-    background-color: #cc8139;
-    color: #262626;
-    border: 5px solid #595540;
-    outline: none;
-    background-repeat: no-repeat;
-}
-</style>
+<style src="@/assets/iredis.css" scoped />
