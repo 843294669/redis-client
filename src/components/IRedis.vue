@@ -55,7 +55,7 @@ export default {
             });
     },
     commandSend() {
-        if (this.command.trim.length == 0) {
+        if (this.command.trim().length == 0) {
             return;
         }
         axios.get(api.redis.sendCommand + this.command.replace(/ /g, "+"))
