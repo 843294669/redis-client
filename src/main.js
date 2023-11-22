@@ -1,4 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.directive("scrollBottom", {
+    updated(el) {
+       el.scrollTo({
+          top: el.scrollHeight - el.clientHeight,
+          behavior: "smooth"
+       })
+    }
+});
+app.mount('#app');
