@@ -1,4 +1,5 @@
 <template>
+    <h1>Redis Commands</h1>
     <div class="log" v-scrollBottom>
         <div class="commands" v-html="data">
         </div>

@@ -24,3 +24,7 @@
     outline: none;
     background-repeat: no-repeat;
 }
+
+h1 {
+    text-align: center;
+}
