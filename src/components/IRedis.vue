@@ -18,7 +18,7 @@ export default {
   name: 'IRedis',
   data() {
     return {
-        data: "",
+        data: "Data Loading ...",
         caption: "",
         command: ""
     }
