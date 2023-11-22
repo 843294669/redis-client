@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/redis",
+      "destination": "https://try.redis.io"
+    }
+  ]
+}
