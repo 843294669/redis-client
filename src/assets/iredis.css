@@ -3,7 +3,8 @@
     width: 90%;
     height: 450px;
     margin: auto;
-    border: double;
+    border: 3px double #020202;
+    border-radius: 6px;
 }
 
 .caption {
