@@ -3,6 +3,7 @@
     width: 90%;
     height: 450px;
     margin: auto;
+    border: double;
 }
 
 .caption {
@@ -18,11 +19,11 @@
 
 #input {
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #262626;
-    border: 5px solid #595540;
-    outline: none;
-    background-repeat: no-repeat;
+    border: 3px solid #595540;
+    border-radius: 6px;
+    padding: 6px;
 }
 
 h1 {
