@@ -55,6 +55,9 @@ export default {
             });
     },
     commandSend() {
+        if (this.command.trim.length == 0) {
+            return;
+        }
         axios.get(api.redis.sendCommand + this.command.replace(/ /g, "+"))
             .then(response => {
               // 请求成功处理
