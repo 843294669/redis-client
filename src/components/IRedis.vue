@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="input">
-        <input id="input" v-model="command" @keyup.enter="commandSend"/>
+        <input id="input" v-model="command" @keyup.enter="commandSend" placeholder=" type a redis command."/>
     </div>
 </template>
 
