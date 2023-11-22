@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/redis(.*)",
-      "destination": "https://try.redis.io"
+      "source": "/redis/:path*",
+      "destination": "https://try.redis.io/:path*"
     }
   ]
 }
