@@ -1,6 +1,6 @@
-# redis-client
-
-## Project setup
+# Redis Client
+### Vue 3 project - Redis Commands Experience.
+### Project setup
 ```
 npm install
 ```
@@ -26,6 +26,6 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### 项目结构
+### Project Description
 ![img.png](readme/img.png)
 ![img_1.png](readme/img_1.png)
