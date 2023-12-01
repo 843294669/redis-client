@@ -1,10 +1,8 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <IRedis/>
+    <router-view />
 </template>
-
 <script>
-import IRedis from './components/IRedis.vue'
+import IRedis from './components/IRedis.vue';
 
 export default {
   name: 'App',
@@ -14,8 +12,4 @@ export default {
 }
 </script>
 
-<style>
-#app {
-
-}
-</style>
+<style></style>
