@@ -5,8 +5,14 @@ module.exports = defineConfig({
   // close ESlint rules
   lintOnSave: false,
   devServer: {
-    // must set true to open proxy.
+    // 启动服务后，打开浏览器： https://webpack.docschina.org/configuration/dev-server/#devserveropen
     open: true,
+    static: {
+      staticOptions: {
+        // // 访问任何url是否都跳转首页: https://expressjs.com/en/4x/api.html#express.static
+        fallthrough: false,
+      }
+    },
     proxy: {
         "/redis": {
             target: "https://try.redis.io",
@@ -17,5 +23,6 @@ module.exports = defineConfig({
             }
         }
     }
+    
   }
 })
