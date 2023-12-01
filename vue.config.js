@@ -21,6 +21,15 @@ module.exports = defineConfig({
             pathRewrite: {
               '^/redis': ''
             }
+        },
+        "/completions": {
+            target: "https://api.openai.com/v1/chat/completions",
+            //target: "https://api.openai.com/v1/engines/davinci-codex/completions",
+            changeOrigin: true,
+            ws: true,
+            pathRewrite: {
+              '^/completions': ''
+            }
         }
     }
     
