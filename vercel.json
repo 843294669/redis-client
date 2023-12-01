@@ -3,6 +3,10 @@
     {
       "source": "/redis/:path*",
       "destination": "https://try.redis.io/:path*"
+    },
+    {
+      "source": "/completions/:path*",
+      "destination": "https://api.openai.com/v1/chat/completions/:path*"
     }
   ]
 }
