@@ -48,16 +48,16 @@ export default {
   },
   // 路由守卫
   beforeRouteLeave(to, from, next) {
-    console.log("to===", to.name) 
-    console.log("from.name ===", from.name) 
-    console.log("from ===", from)    
-    next( vm => {
-      if(from.name === 'xxx') {
-        // 处理语句，可以是 data 中的数据，也可以是 methods中的函数。vm 相当于 this       
-        vm.name = 'xxx' 
-        vm.alarm()
-      }
-    })
+    // console.log("to===", to.name) 
+    // console.log("from.name ===", from.name) 
+    // console.log("from ===", from)    
+    // next( vm => {
+    //   if(from.name === 'xxx') {
+    //     // 处理语句，可以是 data 中的数据，也可以是 methods中的函数。vm 相当于 this       
+    //     vm.name = 'xxx' 
+    //     vm.alarm()
+    //   }
+    // })
   },
   methods: {
     commandHelp(command) {

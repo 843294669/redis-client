@@ -1,16 +1,11 @@
 .log {
     overflow: auto;
-    width: 90%;
+    width: 70%;
     height: 400px;
     margin: auto;
-    border: 3px double #020202;
+    border: 1px double #020202;
     border-radius: 6px;
     padding: 1em;
-}
-
-.gpt {
-    display: flex;
-    justify-content: center;
 }
 
 .input {
@@ -23,11 +18,10 @@
     width: 100%;
     font-size: 1.3em;
     color: #262626;
-    border: 3px solid #595540;
+    border: 2px solid #595540;
     border-radius: 6px;
-    padding: 6px;
 }
 
-h1, h2 {
+h2 {
     text-align: center;
 }
