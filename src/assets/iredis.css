@@ -1,7 +1,7 @@
 .log {
     overflow: auto;
     width: 90%;
-    height: 450px;
+    height: 400px;
     margin: auto;
     border: 3px double #020202;
     border-radius: 6px;
@@ -16,7 +16,7 @@
     display: block;
     margin: auto;
     width: 70%;
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
 #input {
