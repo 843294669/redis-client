@@ -39,8 +39,8 @@ export default {
             'Content-Type': 'application/json',
             // 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}` // Use environment variables for API keys
             'Authorization': 'Bearer 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' // Replace with your actual API key
-          },
-          proxy: { host: '127.0.0.1', port: 7890, protocol: 'http' }
+          }
+          // proxy: { host: '127.0.0.1', port: 7890, protocol: 'http' }
           //httpsAgent: new HttpsProxyAgent("http://localhost:7890")
         })
         .then(response => {
