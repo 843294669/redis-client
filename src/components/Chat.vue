@@ -10,6 +10,7 @@
 </template>
 <script>
 import axios from 'axios'
+//import { HttpsProxyAgent } from 'https-proxy-agent'
 import api from '../utils/api.js'
 axios.defaults.timeout = 50000;
 export default {
@@ -41,7 +42,8 @@ export default {
             // 反引号 `： 反引号用于定义模板字符串，它是ES6引入的一种新的字符串语法。模板字符串允许你在字符串中插入表达式，而不需要使用拼接操作符。
             'Authorization': `Bearer ${process.env.VUE_APP_OPENAI_API_KEY}` // Use environment variables for API keys
           }
-          // proxy: { host: '127.0.0.1', port: 7890, protocol: 'http' }
+          // 这两配置似乎没啥用，还不理解
+          //proxy: { host: '127.0.0.1', port: 7890, protocol: 'https' }
           //httpsAgent: new HttpsProxyAgent("http://localhost:7890")
         })
         .then(response => {
