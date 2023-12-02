@@ -14,24 +14,47 @@ module.exports = defineConfig({
       }
     },
     proxy: {
-        "/redis": {
-            target: "https://try.redis.io",
-            changeOrigin: true,
-            ws: false,
-            pathRewrite: {
-              '^/redis': ''
-            }
-        },
-        "/completions": {
-            target: "https://api.openai.com/v1/chat/completions",
-            //target: "https://api.openai.com/v1/engines/davinci-codex/completions",
-            changeOrigin: true,
-            ws: true,
-            pathRewrite: {
-              '^/completions': ''
-            }
+      "/redis": {
+        target: "https://try.redis.io",
+        changeOrigin: true,
+        ws: false,
+        pathRewrite: {
+          '^/redis': ''
         }
+      },
+      "/completions": {
+        target: "https://api.openai.com/v1/chat/completions",
+        //target: "https://api.openai.com/v1/engines/davinci-codex/completions",
+        changeOrigin: true,
+        ws: false,
+        pathRewrite: {
+          '^/completions': ''
+        }
+      }
     }
-    
   }
+  /** http依赖处理问题 */
+  // configureWebpack: {
+  //   resolve: {
+  //     fallback: {
+  //       http: false,
+  //       https: false,
+  //       net: false,
+  //       tls: false,
+  //       assert: false
+  //     }
+  //   }
+  // }
+  // configureWebpack: {
+  //   resolve: {
+  //     fallback: {
+  //       http: require.resolve("stream-http"),
+  //       https: require.resolve("https-browserify"),
+  //       net: require.resolve("net"),
+  //       tls: require.resolve("tls"),
+  //       tls: require.resolve("url"),
+  //       assert: require.resolve("assert/")
+  //     }
+  //   }
+  // }
 })
