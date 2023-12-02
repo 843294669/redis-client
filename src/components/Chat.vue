@@ -12,7 +12,7 @@
 import axios from 'axios'
 //import { HttpsProxyAgent } from 'https-proxy-agent'
 import api from '../utils/api.js'
-axios.defaults.timeout = 50000;
+//axios.defaults.timeout = 50000;
 export default {
   name: 'Chat',
   data() {
@@ -34,7 +34,7 @@ export default {
           'temperature': 0.7
         },
         {
-          maxBodyLength: 10000,
+          //maxBodyLength: 10000,
           //timeout: 0, // 设置超时值（以毫秒为单位）
           headers:
           {
