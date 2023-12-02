@@ -13,6 +13,8 @@ module.exports = defineConfig({
         fallthrough: false,
       }
     },
+    // 禁用SocketServer
+    webSocketServer: false,
     proxy: {
       "/redis": {
         target: "https://try.redis.io",
