@@ -39,7 +39,7 @@ export default {
           {
             'Content-Type': 'application/json',
             // 反引号 `： 反引号用于定义模板字符串，它是ES6引入的一种新的字符串语法。模板字符串允许你在字符串中插入表达式，而不需要使用拼接操作符。
-            'Authorization': `Bearer ${process.env.VUE_AI_KEY}` // Use environment variables for API keys
+            'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY // Use environment variables for API keys
           }
           // proxy: { host: '127.0.0.1', port: 7890, protocol: 'http' }
           //httpsAgent: new HttpsProxyAgent("http://localhost:7890")
