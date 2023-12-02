@@ -10,7 +10,7 @@ export default defineConfig({
     static: {
       staticOptions: {
         // // 访问任何url是否都跳转首页: https://expressjs.com/en/4x/api.html#express.static
-        fallthrough: false,
+        fallthrough: true
       }
     },
     // 禁用SocketServer
