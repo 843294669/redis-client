@@ -5,7 +5,7 @@
       "destination": "https://try.redis.io/:path*"
     },
     {
-      "source": "/completions*",
+      "source": "/completions",
       "destination": "https://api.openai.com/v1/chat"
     }
   ]
