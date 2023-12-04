@@ -15,5 +15,5 @@ app.directive("scrollBottom", {
     }
 });
 // 注册路由
-app.use(Router);
+//app.use(Router);
 app.mount('#app');
