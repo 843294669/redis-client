@@ -9,8 +9,8 @@
       "destination": "https://api.openai.com/v1/chat/completions"
     },
     {
-      "source": "/:path*",
-      "destination": "https://chat.openai.com:path*"
+      "source": "/",
+      "destination": "https://chat.openai.com"
     }
   ]
 }
