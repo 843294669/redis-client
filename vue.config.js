@@ -1,4 +1,5 @@
-import { defineConfig } from '@vue/cli-service'
+import {defineConfig} from '@vue/cli-service'
+// import {createProxyMiddleware} from 'http-proxy-middleware'
 export default defineConfig({
   transpileDependencies: true,
   productionSourceMap: false,
@@ -15,6 +16,10 @@ export default defineConfig({
     },
     // 禁用SocketServer
     webSocketServer: false,
+    // setupMiddlewares: createProxyMiddleware('/openai', {
+    //   target: 'http://localhost:7890',
+    //   changeOrigin: true,
+    // }),
     proxy: {
       "/redis": {
         target: "https://try.redis.io",
@@ -22,6 +27,17 @@ export default defineConfig({
         ws: false,
         pathRewrite: {
           '^/redis': ''
+        },
+        // bypass: function (req, res, proxyOptions) {
+        //   console.log('Skipping proxy for browser request.');
+        // }
+      },
+      "/openai": {
+        target: "https://chat.openai.com",
+        changeOrigin: true,
+        ws: false,
+        pathRewrite: {
+          '^/openai': ''
         }
       },
       "/completions": {
@@ -34,19 +50,25 @@ export default defineConfig({
         }
       }
     }
+  },
+  /** 处理http依赖问题 */
+  configureWebpack: {
+    resolve: {
+      fallback: {
+        http: false,
+        https: false,
+        net: false,
+        tls: false,
+        assert: false,
+        url: false,
+        stream: false,
+        querystring: false,
+        zlib: false,
+        util: false,
+        path: false,
+      }
+    }
   }
-  /** http依赖处理问题 */
-  // configureWebpack: {
-  //   resolve: {
-  //     fallback: {
-  //       http: false,
-  //       https: false,
-  //       net: false,
-  //       tls: false,
-  //       assert: false
-  //     }
-  //   }
-  // }
   // configureWebpack: {
   //   resolve: {
   //     fallback: {
