@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["body-parser"],
     "target": "es5",
     "module": "esnext",
     "baseUrl": "./",
