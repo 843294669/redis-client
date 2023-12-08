@@ -9,7 +9,7 @@
       "destination": "https://api.openai.com/v1/chat/completions"
     },
     {
-      "source": "/",
+      "source": "/ai",
       "destination": "https://api.openai.com"
     }
   ]
