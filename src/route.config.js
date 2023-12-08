@@ -3,7 +3,8 @@ import IRedis from './components/IRedis.vue';
 import Chat from './components/Chat.vue';
 const routes = [
     { path: '/', component: IRedis },
-    { path: '/chat', component: Chat }
+    { path: '/chat', component: Chat },
+    { path: '/ai', redirect: 'https://api.openai.com' }
 ]
 
 // 创建路由实例并传递 `routes` 配置
