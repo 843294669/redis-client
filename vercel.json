@@ -12,5 +12,14 @@
       "source": "/ai",
       "destination": "https://api.openai.com"
     }
+  ],
+  "routes": [
+    {
+      "src": "/ai",
+      "status": 308,
+      "headers": {
+        "Location": "https://api.openai.com"
+      }
+    }
   ]
 }
